@@ -20,10 +20,13 @@ void testApp::setup(){
 
 
 	gui.setup(); 
+	//lowerVolButton.setPosition(250.0f,250.0f );
+	//musicButton.setup("Play",200.0f, 200.0f,
 	gui.add(musicButton.setup("Play",200.0f, 200.0f));
 	gui.add(pauseButton.setup("Stop",200.0f, 200.0f));
 	gui.add(louderVolButton.setup("+",200.0f, 200.0f));
 	gui.add(lowerVolButton.setup("-",200.0f,200.0f));
+	//gui.setPosition(3.3f, 100.0f);
 	music.loadSound("imcamp.mp3");
 	volume = 0.5f;
 }
@@ -46,11 +49,16 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
+	louderVolButton.setPosition(700.0f,250.0f );
+	lowerVolButton.setPosition(300.0f,250.0f );
 	gui.draw();
+
 }
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
+
+	/*************************************
 	if (key == '-' || key == '_' ){
 		volume -= 0.05;
 		volume = MAX(volume, 0);
@@ -58,6 +66,8 @@ void testApp::keyPressed(int key){
 		volume += 0.05;
 		volume = MIN(volume, 1);
 	}
+	
+	/*************************************/
 }
 
 //--------------------------------------------------------------
@@ -122,13 +132,13 @@ void testApp::pauseButtonPressed(){
 
 void testApp::louderVolButtonPressed(){
 
-	volume += 0.05;
+	volume += 0.1;
 	volume = MIN(volume, 1);
 }
 
 //********************************************
 void testApp::lowerVolButtonPressed(){
 
-	volume -= 0.05;
+	volume -= 0.1;
 	volume = MAX(volume, 0);
 }
