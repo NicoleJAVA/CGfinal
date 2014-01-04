@@ -50,5 +50,8 @@ class testApp : public ofBaseApp{
 	ofSoundPlayer music;
 	
 	float volume;
+
+	ofImage playImg;
+
 	
 };

@@ -22,13 +22,19 @@ void testApp::setup(){
 	gui.setup(); 
 	//lowerVolButton.setPosition(250.0f,250.0f );
 	//musicButton.setup("Play",200.0f, 200.0f,
-	gui.add(musicButton.setup("Play",200.0f, 200.0f));
-	gui.add(pauseButton.setup("Stop",200.0f, 200.0f));
-	gui.add(louderVolButton.setup("+",200.0f, 200.0f));
-	gui.add(lowerVolButton.setup("-",200.0f,200.0f));
+	gui.add(musicButton.setup("Play",150.0f, 150.0f));
+	gui.add(pauseButton.setup("Stop",150.0f, 150.0f));
+	gui.add(louderVolButton.setup("+",150.0f, 150.0f));
+	gui.add(lowerVolButton.setup("-",150.0f, 150.0f));
 	//gui.setPosition(3.3f, 100.0f);
 	music.loadSound("imcamp.mp3");
+	playImg.loadImage("play_icon.png");
+	//playImg;
+	//musicButton.loadFromFile("play_icon.png");
 	volume = 0.5f;
+
+	
+
 }
 
 //--------------------------------------------------------------
@@ -49,8 +55,11 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	louderVolButton.setPosition(700.0f,250.0f );
-	lowerVolButton.setPosition(300.0f,250.0f );
+	louderVolButton.setPosition(800.0f,250.0f );
+	lowerVolButton.setPosition(450.0f,250.0f );
+	musicButton.setPosition(50.0f,250.0f );
+	pauseButton.setPosition(250.0f,250.0f );
+		
 	gui.draw();
 
 }
